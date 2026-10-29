@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 @import "tailwindcss";
 
 * {
   font-family: "Manrope", sans-serif;
   font-weight: 500;
 }
+
+.logoFont {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 @theme {
   --color-primary: #5044E5;
