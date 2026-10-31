@@ -43,14 +43,14 @@ const NewTaskForm = () => {
             {/* title */}
             <div className='flex flex-col gap-1 w-full'>
                 <h3 className='text-gray-700 text-lg'>Title</h3>
-                <input type="text" name='newTaskName' placeholder='Enter the title' onChange={(e) => setTitle(e.target.value)} className='border-gray-400 border rounded-lg outline-none px-3 h-10' />
+                <input type="text" name='newTaskName' placeholder='Enter the title' onChange={(e) => setTitle(e.target.value)} value={title} className='border-gray-400 border rounded-lg outline-none px-3 h-10' />
             </div>
 
 
             {/* description */}
             <div className='flex flex-col gap-1 w-full'>
                 <h3 className='text-gray-700 text-lg'>Description</h3>
-                <textarea name="newTaskDescription" id="" placeholder='Describe your task' onChange={(e) => setDescription(e.target.value)} className='border-gray-400 border rounded-lg outline-none px-3 py-2 h-40 max-sm:h-60'></textarea>
+                <textarea name="newTaskDescription" id="" placeholder='Describe your task' onChange={(e) => setDescription(e.target.value)} value={description} className='border-gray-400 border rounded-lg outline-none px-3 py-2 h-40 max-sm:h-60 resize-none'></textarea>
             </div>
 
 

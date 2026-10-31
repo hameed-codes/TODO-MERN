@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import AddTask from './components/AddTask'
 import ActiveTasks from './components/ActiveTasks'
 import { Toaster } from 'react-hot-toast'
+import CompletedTask from './components/CompletedTask'
 
 const App = () => {
 
@@ -12,9 +13,9 @@ const App = () => {
     <div>
       <Toaster/>
       <NavBar/>
-      {/* <AddTask /> */}
-
+      <AddTask />
       <ActiveTasks />
+      <CompletedTask />
 
     </div>
   )

@@ -6,7 +6,6 @@ import toast from 'react-hot-toast'
 const ActiveTasks = () => {
 
   const [activeTasksData, setActiveTasks] = useState([])
-  const [editForm, setEditForm] = useState(false);
 
   useEffect(() => {
 
@@ -85,7 +84,7 @@ const ActiveTasks = () => {
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7'>
 
         {activeTasksData.map((task, index) => {
-          return <TaskBox key={task._id} task={task} onDone={markDone} onDelete={deleteTask}  editForm={editForm} />
+          return <TaskBox key={task._id} task={task} onDone={markDone} onDelete={deleteTask} />
         })}
 
       </div>

@@ -8,7 +8,7 @@ const NavBar = () => {
 
 
     return (
-        <div className='flex items-center justify-between py-4 px-4 sm:px-12 lg:px-24 xl:px-40 z-20 top-0 sticky bg-white/20 backdrop-blur-lg text-gray-700'>
+        <div className='flex items-center justify-between py-4 px-4 sm:px-12 lg:px-24 xl:px-40 z-20 top-0 sticky bg-white/50 backdrop-blur-lg text-gray-700'>
 
             <div className='flex items-center gap-2 '>
                 <img src={assets.logo} alt="logo" className='w-10'/>
@@ -24,7 +24,9 @@ const NavBar = () => {
                 <a href="#" className='sm:hover:border-b'>Active Tasks</a>
                 <a href="#" className='sm:hover:border-b'>Completed Tasks</a>
 
-                <button className='flex items-center gap-2 bg-primary text-white font-bold px-5 py-1 rounded-2xl m-1 hover:scale-103 cursor-pointer max-sm:bg-white max-sm:text-primary max-sm:w-30 max-sm:py-2 transition-all duration-300 text-lg hover:bg-linear-to-r from-primary to-blue-500 '>GitHub <FaGithub/> </button>
+                <a href="https://github.com/hameed-codes/TODO-MERN" target='_blank'>
+                    <button className='flex items-center gap-2 bg-primary text-white font-bold px-5 py-1 rounded-2xl m-1 hover:scale-103 cursor-pointer max-sm:bg-white max-sm:text-primary max-sm:w-30 max-sm:py-2 transition-all duration-300 text-lg hover:bg-linear-to-r from-primary to-blue-500 '>GitHub <FaGithub/> </button>
+                </a>
 
             </div>
 
