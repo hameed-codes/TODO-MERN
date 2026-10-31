@@ -107,3 +107,28 @@ export const completeTask = async (req, res) => {
         next(err)
     }
 }
+
+export const uncompleteTask = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if(!id) {
+            return res.status(404).json({
+                message: "provide a valid id"
+            })
+        }
+
+        const completedTask = await todoModel.findByIdAndUpdate(
+            id,
+            {completed: false},
+            {returnDocument: 'after'}
+        )
+
+        res.status(201).json({
+            message: "retrived Successfully!",
+            task: completedTask
+        })
+
+    } catch (err) {
+        next(err)
+    }
+}

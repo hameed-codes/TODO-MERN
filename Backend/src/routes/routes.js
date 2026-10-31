@@ -1,5 +1,5 @@
 import express from 'express'
-import { activeTasks, addTask, completedTasks, completeTask, deleteTask, updateTask } from '../controllers/toDo_controller.js';
+import { activeTasks, addTask, completedTasks, uncompleteTask, completeTask, deleteTask, updateTask } from '../controllers/toDo_controller.js';
 
 const router = express.Router();
 
@@ -9,5 +9,6 @@ router.get('/completedTask', completedTasks)
 router.put('/updateTask/:id', updateTask);
 router.delete('/deleteTask/:id', deleteTask)
 router.put('/doneTask/:id', completeTask)
+router.put('/undoneTask/:id', uncompleteTask)
 
 export default router;
