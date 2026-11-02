@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import { connectDB } from './src/database/db.js';
 import dns from 'dns'
 import routes from './src/routes/routes.js';
-import errorHandler from './middlewares/errorHandler.js';
+import errorHandler from './src/middlewares/errorHandler.js';
 import cors from 'cors'
 
 dns.setServers(['8.8.8.8', '1.1.1.1'])
@@ -11,10 +11,12 @@ dns.setServers(['8.8.8.8', '1.1.1.1'])
 
 dotenv.config()
 const app = express();
-app.use(cors())
+app.use(cors({
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173'
+}))
 app.use(express.json());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4900;
 
 //databse connection
 connectDB();

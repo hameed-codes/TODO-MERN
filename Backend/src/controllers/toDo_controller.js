@@ -2,10 +2,10 @@ import todoModel from "../models/todoModelDB.js";
 
 export const addTask = async (req, res) => {
     try {
-        console.log(req.body)
+
         const task = await todoModel.create(req.body);
         res.status(201).send(task)
-        console.log('Task added')
+
     } catch (err) {
         next(err)
     }
@@ -15,7 +15,7 @@ export const activeTasks = async (req, res)=> {
     try {
         const todoData = await todoModel.find({completed:false});
         res.status(200).json(todoData);
-        console.log('data sent')
+
     } catch (err) {
         next(err)
     }
@@ -25,7 +25,7 @@ export const completedTasks = async (req, res)=> {
     try {
         const todoData = await todoModel.find({completed:true});
         res.status(200).json(todoData);
-        console.log('data sent')
+
     } catch (err) {
         next(err)
     }
@@ -63,9 +63,6 @@ export const updateTask = async (req, res) => {
         }
 
         const {title, description} = req.body;
-
-        console.log(id)
-        console.log(title, description)
 
         const task = await todoModel.findByIdAndUpdate(
             id,
