@@ -22,7 +22,7 @@ const CompletedTaskBox = ({task, onUndo, onDelete}) => {
                     <div className='flex gap-3 justify-end'>
                         <button className='flex items-center gap-2 bg-green-700 text-white font-bold px-2 py-2 rounded-xl hover:scale-103 cursor-pointer transition-all duration-300 text-xs hover:bg-linear-to-r from-green-700 to-green-500 w-17' onClick={() => onUndo(task._id)} >Undone </button>
 
-                        <button className=' flex items-center gap-2 bg-red-700 text-white font-bold px-2 py-2 rounded-xl hover:scale-103 cursor-pointer transition-all duration-300 text-xs hover:bg-linear-to-r from-red-700 to-red-500 w-17' onClick={() => onDelete(task._id)}> Delete <HiXCircle className='size-4' /> </button>
+                        <button className=' flex items-center gap-2 bg-red-700 text-white font-bold px-2 py-2 rounded-xl hover:scale-103 cursor-pointer transition-all duration-300 text-xs hover:bg-linear-to-r from-red-700 to-red-500 w-17' onClick={() => onDelete(task._id)}> Remove <HiXCircle className='size-4' /> </button>
 
                     </div>
                 </div>

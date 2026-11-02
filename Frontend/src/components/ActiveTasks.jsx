@@ -7,13 +7,16 @@ const ActiveTasks = () => {
 
   const [activeTasksData, setActiveTasks] = useState([])
 
+
+  console.log(import.meta.env.VITE_API_URL)
+
   useEffect(() => {
 
     const controller = new AbortController();
 
     async function getData() {
       try {
-        const res = await fetch('http://localhost:4900/api/activeTask', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/activeTask`, {
           signal: controller.signal
         });
 
@@ -39,7 +42,7 @@ const ActiveTasks = () => {
   async function markDone(id) {
     console.log(id)
     try {
-      const res = await fetch(`http://localhost:4900/api/doneTask/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/doneTask/${id}`, {
         'method': 'PUT'
       })
 
@@ -61,7 +64,7 @@ const ActiveTasks = () => {
 
   async function deleteTask(id) {
     try {
-      const res = await fetch(`http://localhost:4900/api/deleteTask/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/deleteTask/${id}`, {
         'method' : "DELETE"
       })
 
@@ -78,7 +81,7 @@ const ActiveTasks = () => {
   }
 
   return (
-    <div className='px-4 py-4 sm:px-12 lg:px-24 xl:px-30 flex flex-col gap-10'>
+    <div className='page-fade px-4 py-4 sm:px-12 lg:px-24 xl:px-30 flex flex-col gap-10'>
       <MainHeading title={"Active Tasks"} />
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7'>

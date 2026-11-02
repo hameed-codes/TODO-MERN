@@ -13,7 +13,7 @@ const CompletedTask = () => {
   
       async function getData() {
         try {
-          const res = await fetch('http://localhost:4900/api/completedTask', {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/completedTask`, {
             signal: controller.signal
           });
   
@@ -38,7 +38,7 @@ const CompletedTask = () => {
 
   async function deleteTask(id) {
     try {
-      const res = await fetch(`http://localhost:4900/api/deleteTask/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/deleteTask/${id}`, {
         'method' : "DELETE"
       })
 
@@ -57,7 +57,7 @@ const CompletedTask = () => {
   async function markUndone(id) {
     console.log(id)
     try {
-      const res = await fetch(`http://localhost:4900/api/undoneTask/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/undoneTask/${id}`, {
         'method': 'PUT'
       })
 
@@ -78,7 +78,7 @@ const CompletedTask = () => {
   }
 
   return (
-    <div className='px-4 py-4 sm:px-12 lg:px-24 xl:px-30 flex flex-col gap-10'>
+    <div className='page-fade px-4 py-4 sm:px-12 lg:px-24 xl:px-30 flex flex-col gap-10'>
       < MainHeading title={"Completed Task"}/>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7'>

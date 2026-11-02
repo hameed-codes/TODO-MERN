@@ -18,7 +18,7 @@ const NewTaskForm = () => {
 
         try {
 
-            const res = await fetch('http://localhost:4900/api/addTask', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/addTask`, {
                 'method': 'POST',
                 'headers': { 'Content-Type': 'application/json' },
                 'body': JSON.stringify({ title, description })
