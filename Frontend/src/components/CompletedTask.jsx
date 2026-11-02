@@ -21,8 +21,6 @@ const CompletedTask = () => {
   
           let data = await res.json();
   
-          console.log(data);
-  
           setCompletedTasks(data)
   
         } catch (err) {
@@ -55,7 +53,6 @@ const CompletedTask = () => {
   }
 
   async function markUndone(id) {
-    console.log(id)
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/undoneTask/${id}`, {
         'method': 'PUT'
@@ -65,8 +62,7 @@ const CompletedTask = () => {
         toast.error('Request Failed')
         throw new Error("Could not mark as undone");
       }
-
-      console.log(res);
+      
       toast.success('marked as undone')
 
       setCompletedTasks((prev)=> prev.filter((t)=> t._id !== id))

@@ -7,9 +7,6 @@ const ActiveTasks = () => {
 
   const [activeTasksData, setActiveTasks] = useState([])
 
-
-  console.log(import.meta.env.VITE_API_URL)
-
   useEffect(() => {
 
     const controller = new AbortController();
@@ -23,8 +20,6 @@ const ActiveTasks = () => {
         if (!res.ok) throw new Error('Request failed');
 
         let data = await res.json();
-
-        console.log(data);
 
         setActiveTasks(data)
 
@@ -40,7 +35,7 @@ const ActiveTasks = () => {
   }, [])
 
   async function markDone(id) {
-    console.log(id)
+
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/doneTask/${id}`, {
         'method': 'PUT'

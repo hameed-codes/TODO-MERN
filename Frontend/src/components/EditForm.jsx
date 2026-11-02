@@ -18,7 +18,7 @@ const EditForm = ({task, setEditForm}) => {
         }
 
         try {
-            const res = await fetch(`http://localhost:4900/api/updateTask/${task._id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/updateTask/${task._id}`, {
                 'method' : 'PUT',
                 'headers' : {'Content-Type' : 'application/json'},
                 'body' : JSON.stringify({title: taskTitle, description: taskDescrition})

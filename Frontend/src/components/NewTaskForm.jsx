@@ -11,7 +11,6 @@ const NewTaskForm = () => {
         e.preventDefault();
 
         if (title.trim() === '') {
-            console.log('title is empty')
             toast.error("Title can not be empty");
             return;
         }
